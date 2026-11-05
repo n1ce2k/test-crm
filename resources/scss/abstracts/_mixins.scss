@@ -1,0 +1,47 @@
+@use 'variables' as *;
+
+@mixin reset-button {
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+@mixin focus-ring {
+    outline: 2px solid rgba($color-accent, 0.35);
+    outline-offset: 2px;
+}
+
+@mixin text-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin panel {
+    background: $color-surface;
+    border-radius: $radius-xl;
+}
+
+@mixin scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: $color-border-dashed transparent;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background: $color-border-dashed;
+    }
+}
+
+@mixin breakpoint($width) {
+    @media (max-width: $width) {
+        @content;
+    }
+}
